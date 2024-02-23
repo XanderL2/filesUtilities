@@ -20,7 +20,7 @@ def show_help_options():
     print(f"-find       Fint File in Directory" + Fore.RESET)
 
 
-def parameter_validations(arguments):
+def parameters_validations(arguments):
     
     #Parameters
     if(len(arguments) > 3):
@@ -49,13 +49,12 @@ except Exception as e:
     show_help_options()
 
 
-parameter_validations(arguments); 
+parameters_validations(arguments); 
 
 
 # Start of the process
 
 if(arguments[1] == '-d'):
-    print('Eliminando rutas');
     rm_duplicates(arguments[2]);
 
 
