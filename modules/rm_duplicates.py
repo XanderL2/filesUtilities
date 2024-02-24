@@ -17,6 +17,4 @@ def rm_duplicates(route):
 
     for file in deleted_files:
         print(Fore.RED + file + Fore.RESET);
-    
-
-
+ 
