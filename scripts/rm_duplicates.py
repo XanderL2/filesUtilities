@@ -6,7 +6,7 @@ def rm_duplicates(route):
 
     ls = os.listdir(route);
     deleted_files = []; 
-
+    
     for i in range(len(ls)):
 
         for j in range(i + 1, len(ls)):
@@ -17,4 +17,6 @@ def rm_duplicates(route):
 
     for file in deleted_files:
         print(Fore.RED + file + Fore.RESET);
+
+    
  

@@ -1,14 +1,20 @@
-import sys, re, shutil, os;
-from colorama import init, Fore, Back, Style
-
-
-#Modules 
-from modules.rm_duplicates import rm_duplicates
-
-
+import sys, os;
+from colorama import init, Fore;
 
 #Colorama init
 init()
+
+#Modules 
+from scripts.rm_duplicates import rm_duplicates;
+from scripts.rm_recursively import rm_recursively;
+from scripts.sort_directories import sort_directories;
+
+
+
+
+
+
+#Functions
 
 def show_help_options():
     print(Fore.GREEN + "-d          Remove Duplicate Files");
@@ -35,7 +41,7 @@ def parameters_validations(arguments):
 
     # Route
     if(os.path.exists(arguments[2]) == False):
-        print(Fore.RED + f'Route not found' + Fore.RESET);
+        print(Fore.RED + "Route not found" + Fore.RESET);
         sys.exit();
 
 
@@ -44,6 +50,7 @@ def parameters_validations(arguments):
 #Sys Arguments
 try:
     arguments = sys.argv;
+
 except Exception as e:
     print(e);
     show_help_options()
@@ -57,7 +64,11 @@ parameters_validations(arguments);
 if(arguments[1] == '-d'):
     rm_duplicates(arguments[2]);
 
+elif(arguments[1] == '-dr'):
+    rm_recursively(arguments[2])
 
+elif(arguments[1] == '-s'):
+    sort_directories(arguments[2]);
 
 
 
