@@ -9,8 +9,7 @@ from scripts.rm_duplicates import rm_duplicates;
 from scripts.rm_recursively import rm_recursively;
 from scripts.sort_directories import sort_directories;
 from scripts.rename_directories import rename_directories;
-
-
+from scripts.compresseds_files import compress_files, unzip_files;  
 
 
 
@@ -21,9 +20,6 @@ def show_help_options():
     print(f"-dr         Remove duplicate files recursively")
     print(f"-s          Sort Directories by Format");
     print(f"-re         Rename Directories in order");
-    print(f"-zip        Compress file in .zip")
-    print(f"-unzip      Unzip File .zip")
-    print(f"-find       Fint File in Directory" + Fore.RESET)
 
 
 def parameters_validations(arguments):
@@ -34,7 +30,7 @@ def parameters_validations(arguments):
         show_help_options();
         sys.exit();
 
-    elif(arguments[1] not in ['-d', '-dr', '-s', '-re', '-zip', '-unzip', '-find']):
+    elif(arguments[1] not in ['-d', '-dr', '-s', '-re']):
         print(Fore.RED + 'Parameter is not in options' + Fore.RESET);
         show_help_options();
         sys.exit();
@@ -73,11 +69,7 @@ elif(arguments[1] == '-s'):
 elif(arguments[1] == '-re'):
    
     name = input('Write the name by which to sort: ')
-
     rename_directories(name, arguments[2]);   
-
-
-
 
 
 
