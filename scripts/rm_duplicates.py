@@ -3,6 +3,9 @@ from colorama import init, Fore, Back, Style
 init();
 
 def rm_duplicates(route):
+    
+    original_route = os.getcwd()
+    os.chdir(route)
 
     ls = os.listdir(route);
     deleted_files = []; 
@@ -18,5 +21,5 @@ def rm_duplicates(route):
     for file in deleted_files:
         print(Fore.RED + file + Fore.RESET);
 
-    
+    os.chdir(original_route); 
  

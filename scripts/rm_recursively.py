@@ -18,9 +18,12 @@ def count_directories(route):
     
 
 def rm_recursively(route):
+    
+    original_route = os.getcwd();
+    os.chdir(route);
+
 
     quantity_of_directories = len(count_directories(route)); 
-
     
     if(quantity_of_directories == 0):
         rm_duplicates(route);
@@ -44,7 +47,7 @@ def rm_recursively(route):
             os.chdir('..');
 
            
-            
+    os.chdir(original_route);            
     
 
 

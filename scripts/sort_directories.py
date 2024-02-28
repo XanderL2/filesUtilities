@@ -25,5 +25,7 @@ def sort_directories(route):
 
             if extension in formats:
                 shutil.move(f'./{file}', f'./filesType_{extension}')        
+
+    os.chdir(original_route);
     
 

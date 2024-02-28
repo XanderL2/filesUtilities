@@ -8,7 +8,7 @@ init()
 from scripts.rm_duplicates import rm_duplicates;
 from scripts.rm_recursively import rm_recursively;
 from scripts.sort_directories import sort_directories;
-
+from scripts.rename_directories import rename_directories;
 
 
 
@@ -70,7 +70,11 @@ elif(arguments[1] == '-dr'):
 elif(arguments[1] == '-s'):
     sort_directories(arguments[2]);
 
+elif(arguments[1] == '-re'):
+   
+    name = input('Write the name by which to sort: ')
 
+    rename_directories(name, arguments[2]);   
 
 
 
